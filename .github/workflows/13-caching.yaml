@@ -18,7 +18,7 @@ jobs:
       - name: Checkout codde
         uses: actions/checkout@v7
       - name: Setup Node
-        uses: action/setup-node@v7
+        uses: actions/setup-node@v7
         with:
           node-version: "24.x"
       - name: Install dependencies
