@@ -3,6 +3,9 @@ name: 14 - Working with Artifacts
 on:
   workflow_dispatch:
 
+env:
+  build-artifact-key: app-${{github.sha}}
+
 jobs:
   test-build:
     runs-on: ubuntu-latest
@@ -32,7 +35,7 @@ jobs:
       - name: Upload build files
         uses: actions/upload-artifact@v7
         with:
-          name: app
+          name: ${{env.build-artifact-key}}
           path: 14-artifacts/react-app/dist
   deploy:
     runs-on: ubuntu-latest
