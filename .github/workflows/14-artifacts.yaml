@@ -44,7 +44,7 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v8
         with:
-          name: app
+          name: ${{env.build-artifact-key}}
           path: dist
       - name: Show folder structure
         run: ls -R
